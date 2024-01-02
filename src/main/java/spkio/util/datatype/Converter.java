@@ -1,6 +1,8 @@
 package spkio.util.datatype;
 
-public interface Converter<T> {
+import java.io.Serializable;
+
+public interface Converter<T> extends Serializable {
 	
 	T to();
 

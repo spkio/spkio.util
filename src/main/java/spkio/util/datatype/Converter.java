@@ -1,4 +1,4 @@
-package spkio.common.datatype;
+package spkio.util.datatype;
 
 public interface Converter<T> {
 	

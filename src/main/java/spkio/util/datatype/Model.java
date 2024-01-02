@@ -1,4 +1,4 @@
-package spkio.common.datatype;
+package spkio.util.datatype;
 
 import java.util.List;
 import java.util.stream.Collectors;

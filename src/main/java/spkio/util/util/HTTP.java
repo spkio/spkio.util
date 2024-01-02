@@ -1,4 +1,4 @@
-package spkio.common.util;
+package spkio.util.util;
 
 import java.io.Serializable;
 

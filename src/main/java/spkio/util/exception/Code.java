@@ -1,6 +1,4 @@
-package spkio.common.exception;
-
-import spkio.common.util.HTTP;
+package spkio.util.exception;
 
 import java.io.Serializable;
 
@@ -8,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import spkio.util.util.HTTP;
 
 @Getter @Setter @Accessors(fluent = true, chain = true)
 @NoArgsConstructor

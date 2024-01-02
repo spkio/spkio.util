@@ -1,4 +1,4 @@
-package spkio.common.exception;
+package spkio.util.exception;
 
 public class SpkioException extends Exception {
 	

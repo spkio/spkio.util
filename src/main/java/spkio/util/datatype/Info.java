@@ -9,7 +9,7 @@ public record Info (
 
 	Date update,
 	Date delete,
-	String trace
+	Trace trace
 
 ) {
 
@@ -17,12 +17,16 @@ public record Info (
 		return new Info(new Date(), null, null);
 	}
 
-	public static Info now(String trace) {
+	public static Info now(String idTrace) {
+		return new Info(new Date(), null, Trace.id(idTrace));
+	}
+
+	public static Info now(Trace trace) {
 		return new Info(new Date(), null, trace);
 	}
 
-	public static Info delete(String trace) {
-		return new Info(new Date(), new Date(), trace);
+	public static Info info(Date update, Date delete, String idTrace) {
+		return new Info(update, delete, Trace.id(idTrace));
 	}
 
 }

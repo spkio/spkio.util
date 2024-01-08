@@ -25,6 +25,10 @@ public record Info (
 		return new Info(new Date(), null, trace);
 	}
 
+	public static Info remove() {
+		return new Info(null, new Date(), null);
+	}
+
 	public static Info info(Date update, Date delete, String idTrace) {
 		return new Info(update, delete, Trace.id(idTrace));
 	}

@@ -26,7 +26,7 @@ public record Info (
 	}
 
 	public static Info remove() {
-		return new Info(null, new Date(), null);
+		return new Info(new Date(), new Date(), null);
 	}
 
 	public static Info info(Date update, Date delete, String idTrace) {

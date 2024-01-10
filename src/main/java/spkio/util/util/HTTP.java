@@ -19,6 +19,8 @@ public final class HTTP implements Serializable {
 		public static final String AUTHORIZATION_HEADER = "Authorization";
 		public static final String AUTHORIZATION_BEARER_TOKEN_HEADER = "Bearer";
 
+		public static final String TOKEN_ID = "id-token";
+
 	}
 	
 	public enum Status {

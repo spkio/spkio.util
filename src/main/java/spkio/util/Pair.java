@@ -1,4 +1,4 @@
-package spkio.util.util;
+package spkio.util;
 
 import java.util.AbstractMap;
 import java.util.Map;

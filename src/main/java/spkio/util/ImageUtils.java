@@ -1,4 +1,4 @@
-package spkio.util.util;
+package spkio.util;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

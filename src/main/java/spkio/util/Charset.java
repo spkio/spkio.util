@@ -1,4 +1,4 @@
-package spkio.util.util;
+package spkio.util;
 
 public class Charset {
 	

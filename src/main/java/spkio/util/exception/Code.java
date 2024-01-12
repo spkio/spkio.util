@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
-import spkio.util.util.HTTP;
+import spkio.util.HTTP;
 
 @Getter @Setter @Accessors(fluent = true, chain = true)
 @NoArgsConstructor

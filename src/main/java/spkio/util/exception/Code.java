@@ -1,7 +1,5 @@
 package spkio.util.exception;
 
-import java.io.Serializable;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,7 +8,7 @@ import spkio.util.HTTP;
 
 @Getter @Setter @Accessors(fluent = true, chain = true)
 @NoArgsConstructor
-public class Code implements Serializable {
+public class Code {
 	
 	private Integer httpStatus = null;
 	private String message = null;

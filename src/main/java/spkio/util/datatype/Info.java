@@ -1,5 +1,6 @@
 package spkio.util.datatype;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import lombok.Builder;
@@ -11,7 +12,7 @@ public record Info (
 	Date delete,
 	Trace trace
 
-) {
+) implements Serializable {
 
 	public static Info now() {
 		return new Info(new Date(), null, null);

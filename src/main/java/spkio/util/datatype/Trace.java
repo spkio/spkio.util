@@ -1,5 +1,7 @@
 package spkio.util.datatype;
 
+import java.io.Serializable;
+
 import lombok.Builder;
 import lombok.experimental.Accessors;
 
@@ -21,7 +23,7 @@ public record Trace (
 
     String token
 
-) {
+) implements Serializable {
 
 	public static Trace id(String id) {
 		return new Trace(id, null, null, null, null, null, null, null, null);

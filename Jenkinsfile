@@ -4,6 +4,7 @@ pipeline {
 
     tools {
         maven 'maven 3.9.6'
+        docker 'docker'
     }
     
     stages {
@@ -17,6 +18,8 @@ pipeline {
         stage('Dokerize') {
             steps {
                 script {
+                    def dockerHome = tool 'docker'
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
                     docker.build("spkio-util", '-f Dockerfile .')
                 }
             }

@@ -9,7 +9,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Add your build steps here
                 sh 'mvn clean install'
             }
         }
@@ -17,7 +16,7 @@ pipeline {
         stage('Dokerize') {
             steps {
                 script {
-                    docker.build("spkio-util", '-f Dockerfile .')
+                    docker.build("spkio-util:${env.BUILD_ID}", '-f Dockerfile .')
                 }
             }
         }

@@ -4,6 +4,7 @@ pipeline {
 
     tools {
         maven 'maven 3.9.6'
+        docker 'docker'
     }
     
     stages {
@@ -14,14 +15,15 @@ pipeline {
             }
         }
         
-        // stage('Test') {
-        //     steps {
-        //         // Add your test steps here
-        //         sh 'echo "Testing..."'
-        //     }
-        // }
+        stage('Dokerize') {
+            steps {
+                // Add your test steps here
+                sh 'docker build -t spkio-util .'
+            }
+        }
         
         stage('Deploy') {
+            
             steps {
                 // Add your deployment steps here
                 sh 'echo "Deploying..."'

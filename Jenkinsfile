@@ -13,7 +13,7 @@ pipeline {
             }
         }
         
-        stage('Dokerize') {
+        stage('Build Image') {
             steps {
                 script {
                     docker.build("spkio-util:${env.BUILD_ID}", '-f Dockerfile .')
@@ -21,18 +21,26 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
-            
+        stage('Push Image') {
             steps {
-                // Add your deployment steps here
-                sh 'echo "Deploying..."'
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+                        dockerImage.push()
+                        dockerImage.push("${env.BUILD_ID}")
+                    }
+                }
             }
         }
 
-        stage('Deliver') {
+        stage('Deploy on Kubernetes') {
             steps {
-                // Add your delivery steps here
-                sh 'echo "Delivering..."'
+                script {
+                    kubernetesDeploy(
+                        configs: 'k8s/*.yml',
+                        kubeconfigId: 'k8s',
+                        enableConfigSubstitution: true
+                    )
+                }
             }
         }
     }
